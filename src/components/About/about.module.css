@@ -27,13 +27,15 @@
 
 .aboutImage {
   width: 35%;
+  border-radius: 5%;
 }
 
 .aboutItems {
+  padding-left: 15px;
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
 }
 
 .aboutItem {
