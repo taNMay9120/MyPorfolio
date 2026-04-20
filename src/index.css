@@ -1,6 +1,151 @@
-*{
+@import "tailwindcss";
+
+/* Dark mode and Light mode theme variables */
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: rgba(248, 250, 252, 0.6);
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+}
+
+.dark {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: rgba(15, 23, 42, 0.6);
+  --accent: #0284c7;
+  --accent-hover: #0ea5e9;
+}
+
+* {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Outfit",Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: Outfit, Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Custom button styles */
+.btn-primary {
+  padding: 0.75rem 2rem;
+  background-color: #0ea5e9;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #0284c7;
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4);
+}
+
+.btn-secondary {
+  padding: 0.75rem 2rem;
+  border: 2px solid #0ea5e9;
+  color: #0ea5e9;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #0ea5e9, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Animations */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.glass {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transition-smooth {
+  transition: all 0.3s ease-out;
+}
+
+/* Dark mode scheme */
+.dark {
+  color-scheme: dark;
 }
